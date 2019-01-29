@@ -1,0 +1,17 @@
+<h:body xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets">
+
+    <h:column rendered="#{navigationAction.guest}">
+        <ui:include src = "guest_navigation.xhtml" />
+    </h:column>
+    <h:column rendered="#{navigationAction.regularUser}">
+        <h:outputText> Hello #{session.getAttribute('username')}</h:outputText>
+        <ui:include src = "user_navigation.xhtml" />
+    </h:column>
+    <h:column rendered="#{navigationAction.admin}">
+        <h:outputText> Hello #{session.getAttribute('username')} you are logged in as admin</h:outputText>
+        <ui:include src = "admin_navigation.xhtml" />
+    </h:column>
+
+    <!--<ui:include src = "admin_navigation.xhtml" />-->
+
+</h:body>

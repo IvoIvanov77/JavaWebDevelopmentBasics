@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Casebook</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <div class="text-center mt-5">
+        <div class="row">
+            <a class="btn btn-primary mt-2" href="/">Home</a>
+            <a class="btn btn-primary mt-2" href="/users">Users</a>
+        </div>
+        <form class="mx-auto mt-5" action="/logout" method="post">
+            <div class="button-holder d-flex justify-content-around">
+                <button type="submit" class="btn btn-danger">Logout</button>
+            </div>
+        </form>
+    </div>
+    <h1 class="text-center mt-5">Your Friends</h1>
+    <div class="d-flex justify-content-around mt-5">
+        <div class="d-flex flex-column text-center">
+            ${friends}
+        </div>
+    </div>
+</div>
+</body>
+</html>

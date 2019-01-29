@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>All cats</title>
+    <f:metadata>
+        <f:event type="postAddToView" listener="#{routingManager.userResources}"/>
+    </f:metadata>
+</h:head>
+<f:view>
+    <ui:include src = "../WEB-INF/navigation/app_navigation.xhtml" />
+    <table>
+        <tr>
+            <th>Cat name</th>
+            <th>Cat breed</th>
+            <th>Cat color</th>
+            <th>Number of legs</th>
+        </tr>
+        <ui:repeat var="cat" value="#{allCats.sortedCats}">
+                <tr>
+                    <td>
+                        <h:outputLink value="/cats/profile.html?name=#{cat.name}">
+                            #{cat.name}
+                        </h:outputLink>
+                    </td>
+                    <td>#{cat.breed}</td>
+                    <td>#{cat.color}</td>
+                    <td>#{cat.numberOfLegs}</td>
+                </tr>
+        </ui:repeat>
+    </table>
+</f:view>
+</html>

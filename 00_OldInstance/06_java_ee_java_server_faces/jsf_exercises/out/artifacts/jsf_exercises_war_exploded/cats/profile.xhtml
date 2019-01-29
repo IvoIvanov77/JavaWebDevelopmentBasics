@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Cat profile</title>
+    <f:metadata>
+        <f:event type="postAddToView" listener="#{routingManager.userResources}"/>
+        <f:viewParam name="name" value="#{catProfile.catName}" required="true"
+                     requiredMessage="No entry specified."/>
+    </f:metadata>
+</h:head>
+<f:view>
+    <h1>Profile page</h1>
+    <h2>Name: #{catProfile.cat.name}</h2>
+    <p>Breed: #{catProfile.cat.breed}</p>
+    <p>Color: #{catProfile.cat.color}</p>
+    <p>Legs: #{catProfile.cat.numberOfLegs}</p>
+    <p>Views: #{catProfile.cat.views}</p>
+    <h:form>
+        <h:commandButton action="#{createOrderAction.create}" value="Create">
+            <f:setPropertyActionListener target="#{createOrderAction.catName}" value="#{catProfile.cat.name}" />
+        </h:commandButton>
+    </h:form>
+
+    <h:outputLink value="/cats/all.html">Back</h:outputLink>
+</f:view>
+</html>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Create cat</title>
+    <f:metadata>
+        <f:event type="postAddToView" listener="#{routingManager.adminResources}"/>
+    </f:metadata>
+</h:head>
+<h:body>
+    <f:view>
+        <ui:include src = "../WEB-INF/navigation/app_navigation.xhtml" />
+        <h:form id="registerForm">
+            <!--<h:outputText style="color:red"  value="#{loginAction.errorMessage}"/>-->
+            <table>
+                <tr>
+                    <td><h:outputText value="Enter Cat Name:" /></td>
+                    <td><h:inputText id="cname" value="#{createCatAction.name}"
+                                     required="true" requiredMessage="Please enter cat name" /></td>
+                    <td><h:message for="cname" style="color:red" /></td>
+                </tr>
+<tr>
+                    <td><h:outputText value="Enter Cat breed:" /></td>
+                    <td><h:inputText id="cbreed" value="#{createCatAction.breed}"
+                                     required="true" requiredMessage="Please enter cat breed" /></td>
+                    <td><h:message for="cbreed" style="color:red" /></td>
+                </tr>
+                <tr>
+                    <td><h:outputText value="Enter Cat color:" /></td>
+                    <td><h:inputText id="ccolor" value="#{createCatAction.color}"
+                                     required="true" requiredMessage="Please enter cat color" /></td>
+                    <td><h:message for="ccolor" style="color:red" /></td>
+                </tr>
+                <tr>
+                    <td><h:outputText value="Enter Cat number of legs:" /></td>
+                    <td><h:inputText converter="javax.faces.Integer" id="nlegs"
+                                     value="#{createCatAction.numberOfLegs}"
+                                     required="true" requiredMessage="Please enter cat legs" /></td>
+                    <td><h:message for="nlegs" style="color:red" /></td>
+                </tr>
+
+                <tr>
+                    <td />
+                    <td><h:commandButton value="Create" action="#{createCatAction.create}" /></td>
+                </tr>
+            </table>
+        </h:form>
+        <h:outputLink value="/">Back To Home</h:outputLink>
+    </f:view>
+</h:body>
+</html>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>All Orders</title>
+    <f:metadata>
+        <f:event type="postAddToView" listener="#{routingManager.adminResources}"/>
+    </f:metadata>
+</h:head>
+<f:view>
+    <ui:include src = "../WEB-INF/navigation/app_navigation.xhtml" />
+    <table>
+        <tr>
+            <th>Client name</th>
+            <th>Cat name</th>
+            <th>Made on</th>
+        </tr>
+        <ui:repeat var="order" value="#{allOrders.sortedOrders}">
+            <tr>
+                <td>#{order.getClient().getUsername()}</td>
+                <td>#{order.getCat().getName()}</td>
+                <td>#{order.getFormatedDate()}</td>
+            </tr>
+        </ui:repeat>
+    </table>
+</f:view>
+</html>

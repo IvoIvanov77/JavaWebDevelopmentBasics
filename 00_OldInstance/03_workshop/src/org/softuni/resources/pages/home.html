@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Casebook</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body>
+    <div class="text-center mt-5">
+        <h1>Welcome ${username}!</h1>
+        <a class="btn btn-info mt-2" href="/users">Users</a>
+        <a class="btn btn-info mt-2" href="/friends">Friends</a>
+    </div>
+
+    <form class="mx-auto mt-5" action="/logout" method="post">
+        <div class="button-holder d-flex justify-content-around">
+            <button type="submit" class="btn btn-danger">Logout</button>
+        </div>
+    </form>
+</body>
+</html>
