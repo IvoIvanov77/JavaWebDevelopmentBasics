@@ -1,9 +1,6 @@
-# JavaWebDevelopmentBasics
-JavaWebDevelopmentBasics -  January 2019
-
 ## [JavaWebDevelopmentBasics -  January 2019](https://softuni.bg/trainings/2252/java-web-development-basics-january-2019)
 SoftUni - JavaWebDevelopmentBasics course, part of Java Web module -  January 2019
-
+### [Explore repository](https://ivoivanov77.github.io/repo_explorer/#/repo_explorer/repo/IvoIvanov77/JavaWebDevelopmentBasics)
 ## Course Topics  
   - Web Fundamentals Introduction: HTML & CSS
   - HTTP Protocol – HTTP Protocol Intro, Requests, Responses
