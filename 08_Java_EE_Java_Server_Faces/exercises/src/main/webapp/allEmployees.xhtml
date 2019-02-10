@@ -1,0 +1,35 @@
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <table class="table">
+        <thead>
+        <tr class="row">
+            <th scope="col" class="col-md-1">#</th>
+            <th scope="col" class="col-md-2">First Name</th>
+            <th scope="col" class="col-md-2">Last Name</th>
+            <th scope="col" class="col-md-3">Position</th>
+            <th scope="col" class="col-md-1">Salary</th>
+            <th scope="col" class="col-md-1">Age</th>
+            <th scope="col" class="col-md-2">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <ui:repeat var="e" value="#{allEmployees.allEmployees}">
+            <tr class="row">
+                <th scope="row" class="col-md-1">1</th>
+                <td class="col-md-2">#{e.firstName}</td>
+                <td class="col-md-2">#{e.lastName}</td>
+                <td class="col-md-3">#{e.position}</td>
+                <td class="col-md-1">$#{e.salary}</td>
+                <td class="col-md-1">#{e.age}</td>
+                <td class="col-md-2">
+                    <h:form>
+                        <h:commandButton
+                                styleClass="btn btn-danger"
+                                value="Remove"
+                                action="#{deleteAction.delete(e.id)}" />
+                    </h:form>
+                </td>
+            </tr>
+        </ui:repeat>
+        </tbody>
+    </table>
+</ui:composition>

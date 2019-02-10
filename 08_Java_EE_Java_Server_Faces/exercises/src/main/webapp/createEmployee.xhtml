@@ -1,0 +1,62 @@
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <hr style="height: 2px;" class="bg-dark"/>
+    <h:form class="form">
+        <div class="names-holder d-flex justify-content-between">
+            <div class="form-group w-25">
+                <label for="firstName">First Name</label>
+                <h:inputText id="firstName"
+                             value="#{createEmployee.firstName}"
+                             styleClass="form-control"
+                             required="true"
+                             requiredMessage="Please enter first name"/>
+                <h:message for="firstName" style="color:red" />
+            </div>
+            <div class="form-group w-25">
+                <label for="lastName">Last Name</label>
+                <h:inputText id="lastName"
+                             value="#{createEmployee.lastName}"
+                             styleClass="form-control"
+                             required="true"
+                             requiredMessage="Please enter last name"/>
+                <h:message for="lastName" style="color:red" />
+            </div>
+            <div class="form-group w-25">
+                <label for="position">Position</label>
+                <h:inputText id="position"
+                              value="#{createEmployee.position}"
+                              styleClass="form-control"
+                              required="true"
+                              requiredMessage="Please enter position"/>
+                <h:message for="position" style="color:red" />
+            </div>
+        </div>
+        <div class="numbers-holders d-flex justify-content-between">
+            <div class="form-group w-25">
+                <label for="salary">Salary</label>
+                <h:inputText id="salary"
+                             value="#{createEmployee.salary}"
+                             converterMessage="Please enter digits only."
+                             styleClass="form-control"
+                             required="true"
+                             requiredMessage="Please enter salary"/>
+                <h:message for="salary" style="color:red" />
+            </div>
+            <div class="form-submit-holder d-flex justify-content-center w-25">
+                <h:commandButton
+                        styleClass="btn btn-success mt-4 mb-3 mx-auto w-100"
+                        value="Register"
+                        action="#{createEmployee.createEmployee}" />
+            </div>
+            <div class="form-group w-25">
+                <label for="age">Age</label>
+                <h:inputText id="age"
+                             value="#{createEmployee.age}"
+                             converterMessage="Please enter digits only."
+                             styleClass="form-control"
+                             required="true"
+                             requiredMessage="Please enter age"/>
+                <h:message for="age" style="color:red" />
+            </div>
+        </div>
+    </h:form>
+</ui:composition>
