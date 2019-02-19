@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:c="http://java.sun.com/jsp/jstl/core" xml:lang="EN">
+<ui:composition template="../fragments/base-layout.xhtml">
+    <ui:define name="main-content">
+        <main class="mt-3">
+            <h1 class="text-center">Package Details</h1>
+            <hr class="hr-2 bg-panda"/>
+            <div class="mx-auto">
+                <div class="address-and-date-holder d-flex justify-content-around">
+                    <div class="d-flex flex-column">
+                        <h2 class="text-center">Address</h2>
+                        <h3 class="text-center mt-1">ul. Korab-Planina 1</h3>
+                    </div>
+                    <div class="d-flex flex-column">
+                        <h2 class="text-center">Status</h2>
+                        <h3 class="text-center mt-1">Delivered</h3>
+                    </div>
+                    <div class="d-flex flex-column">
+                        <h2 class="text-center">Estimated Delivery Date</h2>
+                        <h3 class="text-center mt-1">Delivered</h3>
+                    </div>
+                </div>
+                <hr class="hr-2 bg-panda"/>
+                <div class="w-75 mx-auto weight-and-recipient-holder d-flex justify-content-between">
+                    <div class="d-flex flex-column w-50">
+                        <h2 class="text-center">Weight</h2>
+                        <h3 class="text-center mt-1">5.64 KG</h3>
+                    </div>
+                    <div class="d-flex flex-column w-50">
+                        <h2 class="text-center">Recipient</h2>
+                        <h3 class="text-center mt-1">Ivo</h3>
+                    </div>
+                </div>
+                <hr class="hr-2 w-75 bg-panda"/>
+                <div>
+                    <h2 class="text-center">Description</h2>
+                    <h3 class="text-center mt-3">IPhone XS Case</h3>
+                </div>
+            </div>
+        </main>
+    </ui:define>
+</ui:composition>
+</html>

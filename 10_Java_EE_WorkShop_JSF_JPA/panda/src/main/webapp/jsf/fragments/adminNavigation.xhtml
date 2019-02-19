@@ -1,0 +1,30 @@
+<ui:composition xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets">
+    <li class="nav-item">
+        <h:outputLink
+                styleClass="nav-link nav-link-white active"
+                value="/jsf/user/admin/pending.html">
+            Pending
+        </h:outputLink>
+    </li>
+    <li class="nav-item">
+        <h:outputLink
+                styleClass="nav-link nav-link-white active"
+                value="/jsf/user/admin/shipped.html">
+            Shipped
+        </h:outputLink>
+    </li>
+    <li class="nav-item">
+        <h:outputLink
+                styleClass="nav-link nav-link-white active"
+                value="/jsf/user/admin/delivered.html">
+            Delivered
+        </h:outputLink>
+    </li>
+    <li class="nav-item">
+        <h:outputLink styleClass="btn btn-primary" value="/faces/jsf/user/admin/packages-create.xhtml">
+            Create package
+        </h:outputLink>
+    </li>
+
+</ui:composition>

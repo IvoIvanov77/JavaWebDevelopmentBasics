@@ -1,0 +1,48 @@
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:c="http://java.sun.com/jsp/jstl/core">
+    <h1 class="text-center">Hello, #{auth.username}</h1>
+    <hr class="hr-2 bg-panda"/>
+    <div class="d-flex justify-content-between">
+        <div class="w-25 bg-white">
+            <h2 class="text-center">Pending</h2>
+            <div class="border-panda p-3">
+                <c:forEach items="#{homePage.allPendingPackages}" var="item">
+                    <div class="p-2 d-flex justify-content-around">
+                        <h4 class="w-75">#{item.description}</h4>
+                        <h:outputLink
+                                styleClass="btn bg-panda text-white w-25"
+                                value="/jsf/user/package-details.html">
+                            Details
+                        </h:outputLink>
+                    </div>
+                </c:forEach>
+            </div>
+        </div>
+        <div class="w-25 bg-white">
+            <h2 class="text-center">Shipped</h2>
+            <div class="border-panda p-3">
+                <c:forEach items="#{homePage.allShippedPackages}" var="item">
+                    <div class="p-2 d-flex justify-content-around">
+                        <h4 class="w-75">#{item.description}</h4>
+                        <h:outputLink
+                                styleClass="btn bg-panda text-white w-25"
+                                value="/jsf/user/package-details.html">
+                            Details
+                        </h:outputLink>
+                    </div>
+                </c:forEach>
+            </div>
+        </div>
+        <div class="w-25 bg-white">
+            <h2 class="text-center">Delivered</h2>
+            <div class="border-panda p-3">
+                <c:forEach items="#{homePage.allDeliveredPackages}" var="item">
+                    <div class="p-2 d-flex justify-content-around">
+                        <h4 class="w-75">#{item.description}</h4>
+                        <a href="" class="btn bg-panda text-white w-25">Acquire</a>
+                    </div>
+                </c:forEach>
+            </div>
+        </div>
+    </div>
+</ui:composition>
