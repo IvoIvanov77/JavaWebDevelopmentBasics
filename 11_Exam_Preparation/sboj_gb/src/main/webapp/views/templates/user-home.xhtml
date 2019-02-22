@@ -1,0 +1,55 @@
+<main xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets">
+    <hr class="my-3"/>
+    <div class="text-center mb-3">
+        <h4 class="text-info">Welcome, $(username)</h4>
+    </div>
+    <hr class="my-3"/>
+    <div class="container">
+        <div class="row mb-4 d-flex justify-content-around">
+            <div class="col-md-3 d-flex flex-column text-center">
+                <h:graphicImage styleClass="img-thumbnail" value="resources/jpg/medicine.jpg" width="300" height="300"/>
+                <ui:repeat var="job" value="#{jobsBySector.medicineJobs}">
+                    <h5 class="text-center">#{job.profession}</h5>
+                    <a href="/jobs/details/#{job.id}" class="btn btn-info">Details</a>
+                    <a href="/jobs/delete/#{job.id}" class="btn btn-danger">Delete</a>
+                </ui:repeat>
+
+            </div>
+            <div class="col-md-3 d-flex flex-column text-center">
+                <h:graphicImage styleClass="img-thumbnail" value="resources/jpg/car.jpg" width="300" height="300" />
+                <ui:repeat var="job" value="#{jobsBySector.carJobs}">
+                    <h5 class="text-center">#{job.profession}</h5>
+                    <a href="/jobs/details/#{job.id}" class="btn btn-info">Details</a>
+                    <a href="/jobs/delete/#{job.id}" class="btn btn-danger">Delete</a>
+                </ui:repeat>
+            </div>
+            <div class="col-md-3 d-flex flex-column text-center">
+                <h:graphicImage styleClass="img-thumbnail" value="resources/jpg/security.jpg" width="300" height="300" />
+                <ui:repeat var="job" value="#{jobsBySector.securityJobs}">
+                    <h5 class="text-center">#{job.profession}</h5>
+                    <a href="/jobs/details/#{job.id}" class="btn btn-info">Details</a>
+                    <a href="/jobs/delete/#{job.id}" class="btn btn-danger">Delete</a>
+                </ui:repeat>
+            </div>
+        </div>
+        <div class="row mb-4 d-flex justify-content-around">
+            <div class="col-md-3 d-flex flex-column text-center">
+                <h:graphicImage styleClass="img-thumbnail" value="resources/jpg/food.jpg" width="300" height="300" />
+                <ui:repeat var="job" value="#{jobsBySector.foodJobs}">
+                    <h5 class="text-center">#{job.profession}</h5>
+                    <a href="/jobs/details/#{job.id}" class="btn btn-info">Details</a>
+                    <a href="/jobs/delete/#{job.id}" class="btn btn-danger">Delete</a>
+                </ui:repeat>
+            </div>
+            <div class="col-md-3 d-flex flex-column text-center">
+                <h:graphicImage styleClass="img-thumbnail" value="resources/jpg/domestic.jpg" width="300" height="300" />
+                <ui:repeat var="job" value="#{jobsBySector.domesticJobs}">
+                    <h5 class="text-center">#{job.profession}</h5>
+                    <a href="/jobs/details/#{job.id}" class="btn btn-info">Details</a>
+                    <a href="/jobs/delete/#{job.id}" class="btn btn-danger">Delete</a>
+                </ui:repeat>
+            </div>
+        </div>
+    </div>
+    <hr class="my-3"/>
+</main>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:c="http://java.sun.com/jsp/jstl/core">
+<ui:include src="templates/head.xhtml"/>
+<h:body>
+    <div class="container-fluid">
+        <ui:include src="templates/header.xhtml" />
+        <c:choose>
+            <c:when test="#{session.getAttribute('username') != null}">
+                <ui:include src="templates/user-home.xhtml" />
+            </c:when>
+            <c:otherwise>
+                <ui:include src="templates/guest-home.xhtml" />
+            </c:otherwise>
+        </c:choose>
+        <ui:include src="templates/footer.xhtml" />
+    </div>
+</h:body>
+
+</html>

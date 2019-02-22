@@ -1,0 +1,35 @@
+<pretty-config xmlns="http://ocpsoft.org/schema/rewrite-config-prettyfaces"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://ocpsoft.org/schema/rewrite-config-prettyfaces
+                      http://ocpsoft.org/xml/ns/prettyfaces/rewrite-config-prettyfaces.xsd">
+
+    <url-mapping id="home">
+        <pattern value="/" />
+        <view-id value="faces/views/index.xhtml" />
+    </url-mapping>
+
+    <url-mapping id="login">
+        <pattern value="/login" />
+        <view-id value="/faces/views/login.xhtml" />
+    </url-mapping>
+
+    <url-mapping id="register">
+        <pattern value="/register" />
+        <view-id value="/faces/views/register.xhtml" />
+    </url-mapping>
+
+    <url-mapping id="add-job">
+        <pattern value="/add-job" />
+        <view-id value="/faces/views/add-job.xhtml" />
+    </url-mapping>
+
+    <url-mapping id="job-details">
+        <pattern value="/jobs/details/#{id}" />
+        <view-id value="/faces/views/job-details.xhtml" />
+    </url-mapping>
+
+    <url-mapping id="job-delete">
+        <pattern value="/jobs/delete/#{id}" />
+        <view-id value="/faces/views/job-delete.xhtml" />
+    </url-mapping>
+</pretty-config>

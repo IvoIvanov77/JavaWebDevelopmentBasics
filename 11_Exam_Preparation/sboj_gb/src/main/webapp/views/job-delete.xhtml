@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<ui:include src="templates/head.xhtml"/>
+<h:body>
+    <div class="container-fluid">
+        <ui:include src="templates/header.xhtml" />
+        <main>
+            <hr class="my-3"/>
+            <h1 class="text-center">Delete Job</h1>
+            <hr class="hr-3"/>
+            <h:form class="mx-auto w-15">
+                <div class="form-group">
+                    <div class="label-holder d-flex justify-content-center">
+                        <h:outputLabel for="sector" class="h3 mb-2" value="Sector"/>
+                    </div>
+                    <h:inputText
+                            styleClass="form-control"
+                            id="sector"
+                            readonly = "true"
+                            value="#{deleteJob.viewModel.sector}" />
+                </div>
+                <div class="form-group">
+                    <div class="label-holder d-flex justify-content-center">
+                        <h:outputLabel for="profession" class="h3 mb-2" value="Profession"/>
+                    </div>
+                    <h:inputText
+                            styleClass="form-control"
+                            id="profession"
+                            readonly = "true"
+                            value="#{deleteJob.viewModel.profession}" />
+                </div>
+                <div class="form-group">
+                    <div class="label-holder d-flex justify-content-center">
+                        <h:outputLabel for="salary" class="h3 mb-2" value="Salary"/>
+                    </div>
+                    <h:inputText
+                            styleClass="form-control"
+                            id="salary"
+                            readonly = "true"
+                            value="#{deleteJob.viewModel.salary}"/>
+                </div>
+                <div class="form-group">
+                    <div class="label-holder d-flex justify-content-center">
+                        <h:outputLabel for="description" class="h3 mb-2" value="Description"/>
+                    </div>
+                    <h:inputTextarea
+                            styleClass="form-control"
+                            id="description"
+                            readonly = "true"
+                            value="#{deleteJob.viewModel.description}"/>
+                </div>
+                <div class="button-holder d-flex justify-content-center">
+                    <h:commandButton type="submit" styleClass="btn btn-danger text-white" value="Delete Job"
+                                     action="#{deleteJob.delete}"/>
+                </div>
+            </h:form>
+            <hr class="my-3"/>
+        </main>
+        <ui:include src="templates/footer.xhtml" />
+    </div>
+</h:body>
+</html>

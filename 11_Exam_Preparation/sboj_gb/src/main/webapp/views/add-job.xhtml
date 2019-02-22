@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<ui:include src="templates/head.xhtml"/>
+<h:body>
+    <div class="container-fluid">
+        <ui:include src="templates/header.xhtml" />
+        <main>
+            <hr class="my-3"/>
+            <h1 class="text-center">Add Job</h1>
+            <hr class="hr-3"/>
+            <h:form class="mx-auto w-15" >
+                <div class="form-group">
+                    <div class="label-holder d-flex justify-content-center">
+                        <h:outputLabel for="sector" styleClass="h3 mb-2" value="Sector"/>
+                    </div>
+                    <h:inputText
+                            class="form-control"
+                            id="sector"
+                            value="#{createJob.bindingModel.sector}"
+                    />
+                </div>
+                <div class="form-group">
+                    <div class="label-holder d-flex justify-content-center">
+                        <h:outputLabel for="profesion" styleClass="h3 mb-2" value="Profesion"/>
+                    </div>
+                    <h:inputText
+                            class="form-control"
+                            id="profesion"
+                            value="#{createJob.bindingModel.profession}"
+                    />
+                </div>
+                <div class="form-group">
+                    <div class="label-holder d-flex justify-content-center">
+                        <h:outputLabel for="salary" styleClass="h3 mb-2" value="Salary"/>
+                    </div>
+                    <h:inputText
+                            class="form-control"
+                            id="salary"
+                            value="#{createJob.bindingModel.salary}"
+                    >
+                        <f:passThroughAttribute name="type" value="number"/>
+                        <f:passThroughAttribute name="step" value=".01"/>
+                    </h:inputText>
+                </div>
+                <div class="form-group">
+                    <div class="label-holder d-flex justify-content-center">
+                        <h:outputLabel for="description" styleClass="h3 mb-2" value="Description"/>
+                    </div>
+                    <h:inputTextarea
+                            rows="4"
+                            class="form-control"
+                            id="description"
+                            value="#{createJob.bindingModel.description}"
+                    />
+                </div>
+                <div class="button-holder d-flex justify-content-center">
+                    <h:commandButton type="submit" styleClass="btn btn-info text-white" value="Create"
+                                     action="#{createJob.create}"/>
+                </div>
+            </h:form>
+            <hr class="my-3"/>
+        </main>
+        <ui:include src="templates/footer.xhtml" />
+    </div>
+</h:body>
+</html>
