@@ -1,0 +1,10 @@
+<header xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:ui="http://java.sun.com/jsf/facelets">
+    <c:choose>
+        <c:when test="#{session.getAttribute('user-id') != null}">
+            <ui:include src="navbar-user.xhtml" />
+        </c:when>
+        <c:otherwise>
+            <ui:include src="navbar-guest.xhtml" />
+        </c:otherwise>
+    </c:choose>
+</header>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:c="http://java.sun.com/jsp/jstl/core">
+<ui:include src="templates/head.xhtml"/>
+<h:body>
+    <div class="container-fluid">
+        <ui:include src="templates/header.xhtml"/>
+        <main class="mt-3">
+            <hr class="bg-exodia hr-2"/>
+            <h1 class="text-center text-exodia">Document - #{documentDetails.viewModel.id}</h1>
+            <hr class="bg-exodia hr-2 w-75"/>
+            <h:form class="mx-auto w-75">
+                <div class="form-group">
+                    <div class="label-center d-flex justify-content-center">
+                        <label for="title" class="text-exodia h3">Title</label>
+                    </div>
+                    <h:inputText
+                            class="form-control"
+                            id="title"
+                            value="#{documentDetails.viewModel.title}"
+                            readonly="true"
+                    />
+                </div>
+                <div class="form-group">
+                    <div class="label-center d-flex justify-content-center">
+                        <label for="content" class="text-exodia h3">Content</label>
+                    </div>
+                    <h:inputTextarea
+                            class="form-control"
+                            id="content"
+                            rows="10"
+                            value="#{documentDetails.viewModel.content}"
+                            readonly="true"
+                    />
+                </div>
+                <hr class="bg-exodia hr-2"/>
+                <div class="button-holder d-flex justify-content-center">
+                    <h:commandButton
+                            styleClass="btn bg-exodia text-white"
+                            value="Print"
+                            action="#{printBean.print}"
+                    />
+                </div>
+            </h:form>
+            <hr class="bg-exodia hr-2 mt-5"/>
+        </main>
+        <ui:include src="templates/footer.xhtml"/>
+    </div>
+</h:body>
+
+</html>
